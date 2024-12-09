@@ -1,0 +1,444 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Tipografia */
+.anton-regular {
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+#botoncito {
+    background-color: #f70404; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    padding: 10px 20px; 
+    cursor: pointer; 
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+#botoncito:hover{
+    background-color: white; 
+    color: #f70404; 
+}
+.junte {
+    display: flex;
+    justify-content: flex-end; /* Alinea los botones a la derecha */
+    gap: 10px;
+    margin-right: 20px; /* Ajusta si necesitas un margen */
+}
+
+.hover-container {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    overflow: visible; /* Ensure the enlarged content isn't clipped */
+}
+
+.hover-image {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+.hover-text {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: aliceblue;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.hover-container:hover .hover-image {
+    transform: scale(1.2); /* Enlarge the image */
+}
+
+.hover-container:hover {
+    padding-bottom: 20px; /* Ensure enough space for text when hovered */
+}
+
+.hover-container:hover .hover-text {
+    transform: translateY(20px); /* Shift the text to maintain spacing */
+}
+
+.IncioHeader {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    padding: 10px 20px; 
+    box-sizing: border-box; 
+    background-color: transparent; 
+    z-index: 10; 
+}
+
+/* Config Header*/
+header {
+    position: relative; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    background-image: url("/imgs/HeaderSalaAudio.jpg");
+    background-size: cover; 
+    background-position: center; 
+    height: 800px; 
+    width: 100%; 
+    padding: 0 20px; 
+    box-sizing: border-box; 
+    opacity: 0; 
+    transform: translateY(20px); 
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+header.visible{
+    opacity: 1; 
+    transform: translateY(0); /* Regresa a su posición original */
+}
+
+
+/* Ajustes correo*/
+a {
+    color: white;
+    text-decoration: none; 
+}
+a:hover {
+    color: #e8040c;
+}
+/* Diseño Logo pequeño esquina */
+#logoMenu {
+    cursor: pointer; /* Cambia el cursor a la mano cuando se pasa sobre la imagen */
+    transition: transform 0.3s ease; /* Transición suave para el hover */
+}
+  
+#logoMenu:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el mouse */
+}
+
+/* Big Logo */
+.logo-container {
+    display: flex;
+    justify-content: center; /* Centra el logo horizontalmente */
+    margin-bottom: 20px ; /* Espaciado encima y debajo del logo */
+    position: relative; /* Permite el control vertical */
+    z-index: 20; /* Asegura que el logo esté por encima de los botones */
+}
+/* Botones Header */
+.botonesHeader {
+    display: flex;
+    gap: 30px;
+    position: absolute;
+    bottom: 70px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    z-index: 10; /* Los botones deben estar debajo del logo */
+}
+/* Ajustes botones Header */
+.botonesHeader h3 {
+    color: black; 
+}
+.botonesHeader h3:hover{
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    -webkit-text-stroke: 1px black; /* Borde negro */
+}
+
+/* Diseño botones*/
+.botonesHeader button {
+    background-color: white; 
+    color: black; 
+    border: none;
+    border-radius: 300px; 
+    padding: 20px;
+    font-size: 16px; 
+    cursor: pointer; 
+    transition: background-color 0.3s, color 0.3s; 
+    width: 230px;  /* Ancho boton */
+    height: 100px;  /* Altura boton */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+}
+
+/* Animacion de boton*/
+.botonesHeader button:hover {
+    background-color: #e8040c; 
+    color: white;
+}
+
+/* Config body */
+body{
+    background-color: black;
+    font-family: 'Anton', sans-serif; /* TIPOGRAFIA DEL SITIO WEB*/
+}
+p{
+    color: black;
+}
+
+
+/* Ajustes "Disco" */
+
+
+
+
+
+h4 {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    font-size: 18px; 
+    text-align: center; 
+    color: white; 
+}
+.text-image {
+    max-width: 100%; /* se ajusta al container*/
+    height: auto; /* relacion de aspecto*/
+}
+.centrado{
+    opacity: 0; /* Inicialmente oculto */
+    transform: translateY(20px); /* Desplazado hacia abajo */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.centrado.visible{
+    opacity: 1; /* Totalmente visible */
+    transform: translateY(0); /* Regresa a su posición original */
+}
+
+
+
+
+
+
+
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+    grid-gap: 60px; /* Espacio entre las columnas */
+    justify-items: center; /* Centra los items dentro de las celdas */
+    align-items: center; /* Centra los items verticalmente */
+    text-align: center; /* Centra el texto debajo de cada imagen */
+}
+
+.item {
+    transition: transform 0.3s ease-in-out;
+}
+
+.item img {
+    max-height: 400px;
+    max-width: 400px; 
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+.item p {
+    margin-top: 10px;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+}
+
+.item:hover img {
+    transform: scale(1.1);
+    -webkit-filter: drop-shadow(2px 1px 0 rgb(255, 0, 0))
+                    drop-shadow(-1px -1px 0 rgb(255, 0, 0));
+    filter: drop-shadow(2px 1px 0 rgb(255, 0, 0)) 
+            drop-shadow(-1px -1px 0 rgb(255, 0, 0));
+
+}
+
+.item:hover p {
+    color: #e8040c;
+}
+
+/* -------------------------Responsividad Tablets-----------------------------*/
+@media (max-width: 1024px) and (min-width: 768px) and (orientation: portrait) {
+    .IncioHeader {
+        width: 100%; 
+        align-items: center; 
+        display: flex; 
+        justify-content: space-between; 
+        position: absolute; 
+        z-index: 10; /* Asegura que los botones estén por encima de otros elementos */
+    }
+    .junte {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end; /* Alinea los botones a la derecha */
+        gap: 10px;
+        z-index: 10; /* Asegura que los botones estén por encima de otros elementos */
+    }
+    /* Big logo */
+    .logo-container img{
+        margin-top: 100px;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    }
+@media (max-width: 1024px) and (min-width: 768px) and (orientation: landscape){
+    .IncioHeader {
+        width: 100%; 
+        align-items: center; 
+        display: flex; 
+        justify-content: space-between; 
+        position: absolute; 
+        z-index: 10; /* Asegura que los botones estén por encima de otros elementos */
+    }
+    .junte {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end; /* Alinea los botones a la derecha */
+        gap: 10px;
+        z-index: 10; /* Asegura que los botones estén por encima de otros elementos */
+    }
+    /* Big logo */
+    .logo-container {
+        margin-top: 10px;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    /* Para asegurar que el logo no cubra los botones */
+    .big-logo {
+        position: relative;
+        z-index: 1;  /* El logo tiene un z-index bajo */
+    }
+    .boton, .botonReservar {
+        position: relative;
+        z-index: 10; /* Asegura que los botones estén por encima de otros elementos */
+    }
+    /* --------------------footer -------------------------*/
+    .footer {
+        background-image: url("../IMG/RecursosGlobales/superFooter.png"); /* Nueva imagen para pantallas pequeñas */
+        background-size: cover; /* Asegura que la imagen se ajuste */
+        background-position: top center; /* Asegura que la parte superior esté siempre visible */
+        background-color: transparent;
+        max-height: 1800px; 
+        padding-top: 70%;
+    }
+    .footer-content {
+        flex-direction: column; /* Cambia la dirección a columna */
+        text-align: center; /* Centra el texto */
+    }
+    .contact-info, .location, .logo {
+        margin-bottom: 50px;
+    }
+    h2 .primeraLinea {
+        margin-top: 50px; /* Aplica el margin-top solo en pantallas pequeñas */
+    }
+    iframe {
+        /* display: none; Oculta el iframe en pantallas pequeñas */
+        margin-top: 20px; /* Ajusta el margen superior según sea necesario */
+    }
+}
+  /* -------------------------- responsividad celulares --------------------*/
+
+@media (max-width: 768px) {
+   /* Header */
+    #logoMenu {
+        max-width: 70px;
+    }
+    .left-content a {
+        visibility: hidden;
+    }
+    .IncioHeader {
+        width: 100%; 
+        align-items: center; 
+        display: flex; 
+        justify-content: space-between; 
+        position: absolute; 
+    }
+
+    /* Big logo */
+    .logo-container {
+        order: -1; /* Coloca el "Big Logo" al principio */
+        margin-top: 40px;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    /* Botones Header */
+    .botonesHeader {
+        display: grid; 
+        order: 1; /* Mantiene los botones después del logo */
+        margin-top: 20px; /* Espacio para separarlos del logo */
+        position: relative; /* Se asegura que se ubiquen abajo */
+    }
+    header {
+        justify-content: center; 
+        background-image: url("../IMG/RecursosGlobales/HeaderSalaAudio.jpg");
+        background-size: cover; 
+        background-position: center; 
+        width: auto; 
+        align-items: center; 
+        transform: translateY(20px); 
+        position: relative; 
+        opacity: 0; 
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        display: flex;
+        flex-direction: column; /* Coloca los elementos en columna en dispositivos pequeños */
+    }
+    /* Le aniado mas borde al main, para que no se vea todo junto*/
+    main {
+        margin-top: 30px;
+    }
+    .container{
+        margin-bottom: 25px;
+    }
+    .left{
+        margin-left: 0;
+    }
+    .imgMixer{
+        display: none;
+    }
+    .text-image{
+        height: 90%;
+        width: 100%;
+        margin-left: 0;
+    }
+    .button{
+        display: none;
+    }
+
+    /* Cuerpo, Muestra de servicios*/
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); /* Dos columnas */
+        grid-gap: 60px; /* Espacio entre las columnas */
+        justify-items: center; /* Centra los items dentro de las celdas */
+        align-items: center; /* Centra los items verticalmente */
+        text-align: center; /* Centra el texto debajo de cada imagen */
+    }
+
+    /* --------------------footer -------------------------*/
+    .footer {
+      background-image: url('../IMG/RecursosGlobales/superFooter.png'); /* Nueva imagen para pantallas pequeñas */
+      background-size: cover 100%; /* Asegura que la imagen se ajuste */
+      background-position: top center; /* Asegura que la parte superior esté siempre visible */
+      background-color: transparent;
+      max-height: 1800px; 
+      padding: 50px;
+      padding-top: 70%;
+    }
+    .footer-content {
+      flex-direction: column; 
+      text-align: center; 
+    }
+    .contact-info, .location, .logo {
+      margin-bottom: 20px;
+    }
+    h2 .primeraLinea {
+      margin-top: 50px; 
+    }
+    iframe {
+
+        margin-top: 5px; 
+    }
+}
+  

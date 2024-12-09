@@ -14,13 +14,18 @@ public class EstudianteController
 {
 	@Autowired
 	private EstudianteServiceImpl estudianteService;
-	
-	@GetMapping({"/estudiantes","/"})
+	@GetMapping({"/","/estudiantes"})
+	public String index() 
+	{
+		return "index";
+	}
+	@GetMapping("/estudiantes/lista")
 	public String findAllEstudiantes(Model model) 
 	{
 		model.addAttribute("estudiantes",estudianteService.findAll());
 		return "estudiantes"; //Retorna al html estudiantes
 	}
+	
 	@GetMapping("/estudiantes/nuevo")
 	public String showEstudiantes(Model model) 
 	{
@@ -49,7 +54,7 @@ public class EstudianteController
 		estudianteExiste.setApellido(estudiante.getApellido());
 		estudianteExiste.setEmail(estudiante.getEmail());
 		estudianteService.reloadEstudiante(estudianteExiste);
-		return "redirect:/estudiantes";
+		return "redirect:/estudiantes/lista";
 	}
 	
 	@GetMapping("/estudiantes/{id}")

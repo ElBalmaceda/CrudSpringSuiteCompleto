@@ -16,6 +16,7 @@
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous"
         />
+        <link rel="stylesheet" href="/CSS/estudiantes.css">
     </head>
 
     <body>
@@ -24,8 +25,8 @@
         </header>
         <main>
             <div class="container">
-                <div class="row">
-                    <h1>Lista Estudiantes</h1>
+                <div class="rowLetra">
+                    <h1>Lista Usuarios</h1>
                 </div>
                 <div class="row">
                     <div class="col-lg-3">
@@ -50,8 +51,8 @@
                             <td th:text="${estudiante.apellido}">Apellido</td>
                             <td th:text="${estudiante.email}">Email</td>
                             <td>
-                                <a th:href="@{/estudiantes/editar/{id}(id=${estudiante.id})}" class="btn btn-info">Editar</a>
-                                <a th:href="@{/estudiantes/{id}(id=${estudiante.id})}" class="btn btn-danger">Eliminar</a>
+                                <a th:href="@{/estudiantes/editar/{id}(id=${estudiante.id})}" class="btn btn-info">✒️</a>
+                                <a th:href="@{/estudiantes/{id}(id=${estudiante.id})}" class="btn btn-danger">🚮</a>
                             </td>
                         </tr>
                     </tbody>
